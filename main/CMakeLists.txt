@@ -7,8 +7,6 @@ add_custom_target(zig_build
     COMMAND ${CMAKE_COMMAND} -E env
         "INCLUDE_DIRS=${include_dirs}"
         zig build
-            -Dtarget=riscv32-freestanding-none
-            -Dcpu=generic_rv32+m+c
             --cache-dir ${CMAKE_CURRENT_BINARY_DIR}/zig-cache
             --prefix ${CMAKE_CURRENT_BINARY_DIR}
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
